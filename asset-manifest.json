@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/mello-webapp/static/css/main.5e37d41c.chunk.css",
-    "main.js": "/mello-webapp/static/js/main.88002c53.chunk.js",
-    "main.js.map": "/mello-webapp/static/js/main.88002c53.chunk.js.map",
-    "runtime-main.js": "/mello-webapp/static/js/runtime-main.d1a8715c.js",
-    "runtime-main.js.map": "/mello-webapp/static/js/runtime-main.d1a8715c.js.map",
-    "static/js/2.12c5aefb.chunk.js": "/mello-webapp/static/js/2.12c5aefb.chunk.js",
-    "static/js/2.12c5aefb.chunk.js.map": "/mello-webapp/static/js/2.12c5aefb.chunk.js.map",
-    "static/js/3.8a7141f4.chunk.js": "/mello-webapp/static/js/3.8a7141f4.chunk.js",
-    "static/js/3.8a7141f4.chunk.js.map": "/mello-webapp/static/js/3.8a7141f4.chunk.js.map",
-    "index.html": "/mello-webapp/index.html",
-    "static/css/main.5e37d41c.chunk.css.map": "/mello-webapp/static/css/main.5e37d41c.chunk.css.map",
-    "static/js/2.12c5aefb.chunk.js.LICENSE.txt": "/mello-webapp/static/js/2.12c5aefb.chunk.js.LICENSE.txt"
+    "main.css": "https://freshmilkdev.github.io/mello-webapp/static/css/main.5e37d41c.chunk.css",
+    "main.js": "https://freshmilkdev.github.io/mello-webapp/static/js/main.736d8d76.chunk.js",
+    "main.js.map": "https://freshmilkdev.github.io/mello-webapp/static/js/main.736d8d76.chunk.js.map",
+    "runtime-main.js": "https://freshmilkdev.github.io/mello-webapp/static/js/runtime-main.e2eea93b.js",
+    "runtime-main.js.map": "https://freshmilkdev.github.io/mello-webapp/static/js/runtime-main.e2eea93b.js.map",
+    "static/js/2.12c5aefb.chunk.js": "https://freshmilkdev.github.io/mello-webapp/static/js/2.12c5aefb.chunk.js",
+    "static/js/2.12c5aefb.chunk.js.map": "https://freshmilkdev.github.io/mello-webapp/static/js/2.12c5aefb.chunk.js.map",
+    "static/js/3.8a7141f4.chunk.js": "https://freshmilkdev.github.io/mello-webapp/static/js/3.8a7141f4.chunk.js",
+    "static/js/3.8a7141f4.chunk.js.map": "https://freshmilkdev.github.io/mello-webapp/static/js/3.8a7141f4.chunk.js.map",
+    "index.html": "https://freshmilkdev.github.io/mello-webapp/index.html",
+    "static/css/main.5e37d41c.chunk.css.map": "https://freshmilkdev.github.io/mello-webapp/static/css/main.5e37d41c.chunk.css.map",
+    "static/js/2.12c5aefb.chunk.js.LICENSE.txt": "https://freshmilkdev.github.io/mello-webapp/static/js/2.12c5aefb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d1a8715c.js",
+    "static/js/runtime-main.e2eea93b.js",
     "static/js/2.12c5aefb.chunk.js",
     "static/css/main.5e37d41c.chunk.css",
-    "static/js/main.88002c53.chunk.js"
+    "static/js/main.736d8d76.chunk.js"
   ]
 }
