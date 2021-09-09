@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Switch} from "react-router-dom";
+// import {BrowserRouter as Router, Switch} from "react-router-dom";
+/* TODO: Only for deployment purposes */
+import {HashRouter as Router, Switch} from "react-router-dom";
 import {routes} from "./routes";
 import {LoginPage} from "./pages/login";
 import {PublicRoute} from "./routes/PublicRoute";
