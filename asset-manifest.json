@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mello-webapp/static/css/main.5e37d41c.chunk.css",
-    "main.js": "/mello-webapp/static/js/main.16c78996.chunk.js",
-    "main.js.map": "/mello-webapp/static/js/main.16c78996.chunk.js.map",
+    "main.js": "/mello-webapp/static/js/main.f8dea905.chunk.js",
+    "main.js.map": "/mello-webapp/static/js/main.f8dea905.chunk.js.map",
     "runtime-main.js": "/mello-webapp/static/js/runtime-main.d1a8715c.js",
     "runtime-main.js.map": "/mello-webapp/static/js/runtime-main.d1a8715c.js.map",
     "static/js/2.f8385ff8.chunk.js": "/mello-webapp/static/js/2.f8385ff8.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d1a8715c.js",
     "static/js/2.f8385ff8.chunk.js",
     "static/css/main.5e37d41c.chunk.css",
-    "static/js/main.16c78996.chunk.js"
+    "static/js/main.f8dea905.chunk.js"
   ]
 }
