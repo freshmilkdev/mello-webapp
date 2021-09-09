@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {TextInput} from "../Shared/TextInput/TextInput";
-import styles from './Login.module.css';
+import styles from './Menu.module.css';
 import clsx from "clsx";
 import {Typography} from "../Shared/Typography/Typography";
 import {Button} from "../Shared/Button/Button";
