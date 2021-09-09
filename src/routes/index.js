@@ -1,7 +1,6 @@
 export const routes = {
     home: '/',
     login: '/login',
-    logout: '/logout',
-    submitRequest: '/submit-request',
+    maintenanceRequest: '/maintenance-request',
     conversations: '/conversations',
 }

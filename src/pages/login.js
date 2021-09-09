@@ -8,8 +8,9 @@ export const LoginPage = () => {
         e.preventDefault();
         console.log('submit login form action');
     }
-    return <Login
-        onLogIn={handleLogIn}
-        onInputChange={handleInputChange}
-        credentials={credentials}/>
+    return (
+        <Login onLogIn={handleLogIn}
+               onInputChange={handleInputChange}
+               credentials={credentials}/>
+    )
 }

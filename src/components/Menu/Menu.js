@@ -11,9 +11,9 @@ export const Menu = ({user, onLogOut}) => {
     return <div className={clsx(styles.menu, 'flexCenter')}>
         <div className={styles.loginInner}>
             <Typography variant={'h3'}>Welcome {user}!</Typography>
-            <Typography className='mb-1'>Menu</Typography>
-            <Button linkTo={routes.submitRequest} label={'Submit A Request'} rounded className='mb-1'/>
-            <Button linkTo={routes.conversations} label={'View Conversations'} rounded className='mb-1'/>
+            <Typography className='mb-3'>Menu</Typography>
+            <Button linkTo={routes.maintenanceRequest} label={'Submit A Request'} rounded className='mb-3'/>
+            <Button linkTo={routes.conversations} label={'View Conversations'} rounded className='mb-3'/>
             <Button label={'Log Out'} onClick={onLogOut} rounded outlined/>
         </div>
     </div>

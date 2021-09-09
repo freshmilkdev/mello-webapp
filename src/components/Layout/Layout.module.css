@@ -1,4 +1,18 @@
 .layout {
+    min-height: 100vh;
+    background: #fff;
+    position: relative;
+    padding: 42px;
+    max-width: 840px;
+    margin: 0 auto;
+}
+.outerPage {
+    padding: 0;
     height: 100vh;
-    background: var(--color-grey-main);
+    max-width: initial;
+}
+@media screen and (min-width: 767px) {
+    .outerPage {
+        background: var(--color-grey-main);
+    }
 }

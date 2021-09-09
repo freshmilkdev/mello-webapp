@@ -1,6 +1,5 @@
 .button {
     background: var(--color-primary-main);
-    width: 100%;
     display: block;
     padding: 16px 40px;
     color: #fff;
@@ -12,18 +11,36 @@
     transition: all .4s;
     font-size: 24px;
     font-weight: 700;
+    border-radius: 5px;
 }
+.fullWidth {
+    max-width: 100%;
+    min-width: 100%;
+}
+.small {
+    font-size: 20px;
+}
+
+@media screen and (min-width: 767px) {
+    .button {
+        max-width: max-content;
+    }
+}
+
 .button:hover, .button:active {
     background: var(--color-primary-dark);
     color: #fff;
 }
 
 .outlined {
-
     background: #fff;
     color: var(--color-primary-main);
 }
 
 .rounded {
     border-radius: var(--rounded-border-radius);
+}
+
+.secondaryColor {
+
 }

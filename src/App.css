@@ -3,13 +3,13 @@
     --color-primary-dark: #2d95b3;
     --text-color-primary: #696973;
     --color-grey-main: #E5E5E5;
+    --color-grey-light: #F0F2F6;
     --rounded-border-radius: 30px;
 }
 
 html, body {
     font-family: 'Raleway', sans-serif;
     color: var(--text-color-primary);
-
 }
 
 html * {
@@ -24,6 +24,7 @@ h1 {
 
 h2 {
     font-size: 28px;
+    font-weight: 700;
 }
 
 h3 {
@@ -38,5 +39,11 @@ h3 {
 }
 
 .mb-1 {
+    margin-bottom: 16px;
+}
+.mb-2 {
+    margin-bottom: 20px;
+}
+.mb-3 {
     margin-bottom: 40px;
 }
