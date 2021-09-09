@@ -1,0 +1,26 @@
+.button {
+    background: var(--color-primary-main);
+    width: 100%;
+    display: block;
+    padding: 16px 40px;
+    color: #fff;
+    outline: none;
+    border: 1px solid var(--color-primary-main);
+    cursor: pointer;
+    transition: all .4s;
+    font-size: 24px;
+    font-weight: 700;
+}
+.button:hover, .button:active, .button:focus {
+    background: var(--color-primary-dark);
+}
+
+.outlined {
+
+    background: #fff;
+    color: var(--color-primary-main);
+}
+
+.rounded {
+    border-radius: var(--rounded-border-radius);
+}

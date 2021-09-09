@@ -1,0 +1,19 @@
+.login {
+    flex-direction: column;
+    height: 100%;
+}
+.loginInner {
+    width: 100%;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    padding: 62px;
+}
+@media screen and (min-width: 767px){
+    .loginInner {
+        border: 1px solid #EEEEEE;
+        box-sizing: border-box;
+        border-radius: 20px;
+        max-width: 482px;
+        padding: 48px;
+    }
+}
