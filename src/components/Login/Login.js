@@ -5,32 +5,28 @@ import clsx from "clsx";
 import {Typography} from "../Shared/Typography/Typography";
 import {Button} from "../Shared/Button/Button";
 
-export const Login = () => {
-    const [credentials, setCredentials] = useState({login: '', password: ''});
+export const Login = ({credentials, onLogIn, onInputChange}) => {
     const {login, password} = credentials;
-    const handleInputChange = e => setCredentials({...credentials, [e.target.name]: e.target.value});
-    const handleLogIn = () => console.log('login action');
-
     return <div className={clsx(styles.login, 'flexCenter')}>
         <div className={styles.loginInner}>
             <Typography variant={'h3'}>Welcome!</Typography>
             <Typography className='mb-1'>Sign In</Typography>
             <TextInput
                 rounded
-                onChange={handleInputChange}
+                onChange={onInputChange}
                 value={login}
                 name='login'
                 label='E-Mail or Username'
                 className='mb-1'/>
             <TextInput
                 rounded
-                onChange={handleInputChange}
+                onChange={onInputChange}
                 value={password}
                 name='password'
                 label='Password'
                 type='password'
                 className='mb-1'/>
-            <Button label={'Log In'} onClick={handleLogIn} rounded />
+            <Button label={'Log In'} onClick={onLogIn} rounded />
         </div>
     </div>
 };
