@@ -2,6 +2,7 @@
     --color-primary-main: #78d4ec;
     --color-primary-dark: #2d95b3;
     --text-color-primary: #696973;
+    --color-grey-main: #E5E5E5;
     --rounded-border-radius: 30px;
 }
 
@@ -12,6 +13,7 @@ html, body {
 }
 
 html * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }

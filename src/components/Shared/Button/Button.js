@@ -1,15 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from "clsx";
+import {Link} from "react-router-dom";
 import styles from './Button.module.css';
 
-export const Button = ({label, color = 'primary', rounded = false, outlined = false, onClick}) => {
+export const Button = ({label, linkTo = '', color = 'primary', rounded = false, outlined = false, onClick, className = ''}) => {
     let props = {};
     if (onClick) props.onClick = onClick;
-    return <button {...props} className={clsx(styles.button, {
+    if(linkTo) props.to = linkTo;
+
+    const TagComponent = linkTo ? Link : 'button';
+
+    return <TagComponent {...props} className={clsx(styles.button, className, {
         [styles.rounded]: rounded,
         [styles.outlined]: outlined,
-    })}>{label}</button>
+    })}>{label}</TagComponent>
 }
 
 Button.propTypes = {
