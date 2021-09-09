@@ -17,13 +17,13 @@ export const Button = (
         [styles.outlined]: outlined,
         [styles.small]: small,
         [styles.fullWidth]: fullWidth,
-        [styles.secondaryColor]: color !== 'primary'
+        [styles.secondary]: color === 'secondary'
     })}>{label}</TagComponent>
 }
 
 Button.propTypes = {
     label: PropTypes.string.isRequired,
-    color: PropTypes.string,
+    color: PropTypes.oneOf(['secondary', 'primary']),
     rounded: PropTypes.bool,
     outlined: PropTypes.bool,
     onClick: PropTypes.func,

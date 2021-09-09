@@ -7,14 +7,15 @@ import {routes} from "../../../routes";
 import clsx from "clsx";
 
 
-export const Header = ({title}) => {
+export const Header = ({title, hasBackBtn = true}) => {
     return (
         <header className={clsx('flexCenter', styles.header, 'mb-3')}>
             {title && <Typography variant='h2'>{title}</Typography>}
-            <Link to={routes.home} className={styles.link}>Return to Home</Link>
+            {hasBackBtn && <Link to={routes.home} className={styles.link}>Return to Home</Link>}
         </header>
     )
 }
 Header.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    hasBackBtn: PropTypes.bool
 }

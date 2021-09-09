@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './MaintenanceRequest.module.css';
 import {Header} from "../Shared/Header/Header";
 import {Input} from "../Shared/Input/Input";
 import {Button} from "../Shared/Button/Button";

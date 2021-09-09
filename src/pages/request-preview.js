@@ -1,35 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {RequestPreview} from "../components/RequestPreview/RequestPreview";
 
-import {MaintenanceRequest} from "../components/Maintenance/MaintenanceRequest";
+let companies = [];
+for (let i = 1; i <= 10; i++) companies.push(`Company ${i}`);
 
-export const MaintenanceRequestPage = () => {
-    const [requestData, setRequestData] = useState({
-        jobType: '',
-        numberOfRequests: '',
-        address: '',
-        city: '',
-        zipCode: '',
-        description: '',
-        photo: ''
-    });
-    const [file, setFile] = useState(null);
+export const RequestPreviewPage = () => {
+    const requestData = {
+        vendorName: 'Vendor Name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis delectus eaque esse est neque officiis qui repellat sequi tempora. A, animi cumque enim ex fugit illum labore maiores mollitia?',
+        address: 'Address Goes here st. 1', city: 'New York',
+        companies: companies
+    };
+    const handleSubmit = () => console.log('handle send request');
 
-    const handleInputChange = e => {
-        if (e.target.type === 'file' && e.target.files.length) {
-            setFile(e.target.files[0]);
-        }
-
-        setRequestData({...requestData, [e.target.name]: e.target.value});
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(file);
-        console.log('submit login form action');
-    }
-    return (
-        <MaintenanceRequest
-            onSubmit={handleSubmit}
-            onInputChange={handleInputChange}
-            requestData={requestData}/>
-    )
+    return <RequestPreview requestData={requestData} onSubmit={handleSubmit}/>
 }

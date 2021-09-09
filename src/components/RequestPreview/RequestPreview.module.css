@@ -1,0 +1,27 @@
+.requestPreview * {
+    color: #000000;
+}
+
+.content {
+    line-height: 25px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.companies {
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.buttons {
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 767px) {
+    .content {
+        font-size: 20px;
+    }
+    .buttons {
+        justify-content: space-evenly;
+    }
+}

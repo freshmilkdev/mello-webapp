@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {MaintenanceRequest} from "../components/Maintenance/MaintenanceRequest";
+import {MaintenanceRequest} from "../components/MaintenanceRequest/MaintenanceRequest";
 
 export const MaintenanceRequestPage = () => {
     const [requestData, setRequestData] = useState({
