@@ -1,6 +1,9 @@
 .header {
     justify-content: space-between;
 }
+.noTitle {
+    justify-content: flex-end;
+}
 @media screen and (max-width: 767px) {
     .header {
         align-items: flex-start;

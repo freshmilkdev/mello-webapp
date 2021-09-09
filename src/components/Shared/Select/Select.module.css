@@ -1,0 +1,33 @@
+.selectWrapper {
+    display: block;
+    width: 100%;
+    background: #fff;
+}
+
+.selectWrapper > label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.select {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid var(--color-grey-dark);
+    outline: none;
+    min-height: 40px;
+}
+.select option {
+    font-size: 16px;
+}
+@media screen and (min-width: 767px) {
+    .select {
+        min-height: 64px;
+        font-size: 18px;
+    }
+}

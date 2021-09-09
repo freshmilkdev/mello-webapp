@@ -12,6 +12,6 @@ export const RequestPreviewPage = () => {
         companies: companies
     };
     const handleSubmit = () => console.log('handle send request');
-
-    return <RequestPreview requestData={requestData} onSubmit={handleSubmit}/>
+    const handleCancel = () => console.log('handle cancel request');
+    return <RequestPreview requestData={requestData} onSubmit={handleSubmit} onCancel={handleCancel}/>
 }

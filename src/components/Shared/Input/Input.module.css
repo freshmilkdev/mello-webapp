@@ -22,7 +22,7 @@
 }
 @media screen and (min-width: 767px) {
     .input {
-        min-height: 64px;
+        min-height: 50px;
         /*font-size: 20px;*/
     }
 }

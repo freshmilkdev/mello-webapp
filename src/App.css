@@ -7,7 +7,19 @@
     --color-grey-light: #F0F2F6;
     --rounded-border-radius: 30px;
 }
+::-webkit-scrollbar {
+    width: 0.5em !important;
+    scroll-behavior: smooth !important;
+}
 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey !important;
+    border-radius: 10px !important;
+}
 html, body {
     font-family: 'Raleway', sans-serif;
     color: var(--text-color-primary);
