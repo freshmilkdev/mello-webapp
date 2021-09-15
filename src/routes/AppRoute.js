@@ -10,12 +10,19 @@ export const AppRoute = ({ component: Component, isAuthProtected = true, ...rest
     const {path} = rest;
     const token = loadState(tokenKey);
     const {loading} = useProtectedRoute(token, path);
-
+    const isLogin = path === routes.login;
     return (
         <Route
             {...rest}
             render={(props) => {
-                if (token && path === routes.login) {
+                if (!token && !isLogin) {
+                    return (
+                        <Redirect
+                            to={{pathname: routes.login, state: {from: props.location}}}
+                        />
+                    )
+                }
+                if (token && isLogin) {
                     return (
                         <Redirect
                             to={{pathname: routes.home, state: {from: props.location}}}

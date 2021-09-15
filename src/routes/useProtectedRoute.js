@@ -7,6 +7,7 @@ import {saveState, removeState} from "../helpers/localStorage";
 export const useProtectedRoute = (token, path) => {
     const history = useHistory();
     const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         async function verifyToken(token) {
             if (token) {
@@ -27,10 +28,6 @@ export const useProtectedRoute = (token, path) => {
         }
         verifyToken(token);
     }, []);
-
-    useEffect(() => {
-        if (!token) history.push(routes.login);
-    }, [token]);
 
     return {
         loading
