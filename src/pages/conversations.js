@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Conversations} from "../components/Conversations/Conversations";
 import {useProjects} from "../components/Conversations/useProjects";
+import {useCompanies} from "../components/Conversations/useCompanies";
 
 // const projects = [{id: 1, name: 'Project 1'}, {id: 2, name: 'Project 2'}];
-const companies = [{id: 1, name: 'Company 1'}, {id: 2, name: 'Company 2'}];
+// const companies = [{id: 1, name: 'Company 1'}, {id: 2, name: 'Company 2'}];
 const messages = [
     {
         id: 1,
@@ -28,7 +29,7 @@ export const ConversationsPage = () => {
         chatInputMessage: ''
     });
     const {projects} = useProjects();
-
+    const {companies} = useCompanies(data.projectId);
     useEffect(() => {
         if (!data.projectId && projects.length > 0) {
             setData({...data, projectId: projects[0].id});
@@ -37,7 +38,7 @@ export const ConversationsPage = () => {
             setData({...data, companyId: companies[0].id});
         }
     }, [projects, companies]);
-
+    console.log(companies)
     const handleChange = e => setData({...data, [e.target.name]: e.target.value});
     return (
         <Conversations
