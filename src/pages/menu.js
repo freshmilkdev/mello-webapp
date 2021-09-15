@@ -1,6 +1,6 @@
 import React from 'react';
 import {Menu} from "../components/Menu/Menu";
-import {useAuth} from "../hooks/auth/useAuth";
+import {useAuth} from "../components/Login/useAuth";
 
 export const MenuPage = () => {
     const {onLogout} = useAuth();

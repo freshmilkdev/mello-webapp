@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Conversations} from "../components/Conversations/Conversations";
-import {useProjects} from "../hooks/projects/useProjects";
+import {useProjects} from "../components/Conversations/useProjects";
 
 // const projects = [{id: 1, name: 'Project 1'}, {id: 2, name: 'Project 2'}];
 const companies = [{id: 1, name: 'Company 1'}, {id: 2, name: 'Company 2'}];
