@@ -8,7 +8,7 @@ const request = axios.create({
 });
 // Add a request interceptor
 request.interceptors.request.use((config) => {
-    config.headers.Authorization = loadState('accessToken');
+    config.headers.Authorization = `Bearer ${loadState('accessToken')}`
     return config;
 });
 export {request};

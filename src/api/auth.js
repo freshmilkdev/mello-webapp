@@ -8,7 +8,7 @@ const endpoints = {
     verifyToken: /*`/token/verify`*/ 'https://run.mocky.io/v3/6512c41a-c0ae-4773-b127-977045c457ad',
     refreshToken: `/token/refresh`
 };
-export const authService = {
+export const authAPI = {
     login: credentials =>
         request({
             method: 'post',

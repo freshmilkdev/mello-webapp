@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {authService} from "../../services/auth.service";
+import {authAPI} from "../../api/auth";
 import {removeState, saveState, tokenKey} from "../../helpers/localStorage";
 import {useHistory} from "react-router-dom";
 import {routes} from "../../routes";
@@ -15,7 +15,7 @@ export const useAuth = () => {
         try {
             if (error) setError(false);
             setLoading(true);
-            const result = await authService.login(credentials);
+            const result = await authAPI.login(credentials);
             if (result?.data?.token) {
                 saveState(tokenKey, result.data.token);
                 history.push(routes.home);
