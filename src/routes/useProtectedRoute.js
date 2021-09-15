@@ -4,15 +4,16 @@ import {loadState, removeState, saveState} from "../helpers/localStorage";
 import {routes} from "./index";
 import {authService} from "../services/auth.service";
 
-export const useProtectedRoute = (path) => {
+export const useProtectedRoute = (token, path) => {
     const history = useHistory();
+
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const accessToken = loadState("accessToken");
-        if (!accessToken) history.push(routes.login);
+        if (!token) history.push(routes.login);
         setLoading(true);
-        authService.verifyToken(accessToken)
+
+        /*authService.verifyToken(accessToken)
             .then(({data}) => {
                 if (data.token) {
                     saveState('accessToken', data.token)
@@ -25,8 +26,8 @@ export const useProtectedRoute = (path) => {
             .finally(() => {
                 setLoading(true);
                 console.log('tokenUpdated');
-            });
-    }, []);
+            });*/
+    }, [token]);
 
     return {
         loading

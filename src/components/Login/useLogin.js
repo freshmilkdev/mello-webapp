@@ -13,12 +13,14 @@ export const useLogin = () => {
         e.preventDefault();
         try {
             if (error) setError(false);
+
             const result = await authService.login(credentials);
             if (result?.data?.token) {
-                saveState(tokenKey, result.token);
+                saveState(tokenKey, result.data.token);
                 history.push(routes.home);
             }
         } catch (e) {
+            console.log(e);
             setError(true);
         }
     }
