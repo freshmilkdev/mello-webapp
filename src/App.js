@@ -17,7 +17,7 @@ function App() {
             <Router>
                 <Switch>
                     <AppRoute path={routes.home} component={MenuPage} exact />
-                    <AppRoute path={routes.login} component={LoginPage} />
+                    <AppRoute path={routes.login} component={LoginPage} isAuthProtected={false}/>
                     <AppRoute path={routes.maintenanceRequest} component={MaintenanceRequestPage} />
                     <AppRoute path={routes.requestPreview} component={RequestPreviewPage} />
                     <AppRoute path={routes.conversations} component={ConversationsPage} />

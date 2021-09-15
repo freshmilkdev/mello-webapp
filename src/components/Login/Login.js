@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import {Typography} from "../Shared/Typography/Typography";
 import {Button} from "../Shared/Button/Button";
 
-export const Login = ({credentials, onLogIn, onInputChange}) => {
+export const Login = ({credentials, error, onLogIn, onInputChange}) => {
     const {login, password} = credentials;
     return (
         <div className={clsx(styles.login, 'flexCenter')}>
@@ -17,7 +17,8 @@ export const Login = ({credentials, onLogIn, onInputChange}) => {
                     rounded
                     onChange={onInputChange}
                     value={login}
-                    name='login'
+                    name='email'
+                    type={`email`}
                     label='E-Mail or Username'
                     className='mb-3'/>
                 <Input
@@ -28,6 +29,7 @@ export const Login = ({credentials, onLogIn, onInputChange}) => {
                     label='Password'
                     type='password'
                     className='mb-3'/>
+                {error && <div className={clsx(styles.error, 'mb-1')}>Wrong username or password</div>}
                 <Button label={'Log In'} rounded/>
             </form>
         </div>

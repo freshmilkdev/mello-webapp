@@ -1,16 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Login} from "../components/Login/Login";
+import {useLogin} from "../components/Login/useLogin";
 
 export const LoginPage = () => {
-    const [credentials, setCredentials] = useState({login: '', password: ''});
-    const handleInputChange = e => setCredentials({...credentials, [e.target.name]: e.target.value});
-    const handleLogIn = (e) => {
-        e.preventDefault();
-        console.log('submit login form action');
-    }
+    const {credentials, error, onCredentialsChange, onLogin} = useLogin();
     return (
-        <Login onLogIn={handleLogIn}
-               onInputChange={handleInputChange}
-               credentials={credentials}/>
+        <Login credentials={credentials} error={error} onLogIn={onLogin}
+               onInputChange={onCredentialsChange}/>
     )
 }

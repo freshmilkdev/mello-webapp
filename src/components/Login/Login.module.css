@@ -17,3 +17,7 @@
         padding: 48px;
     }
 }
+.error {
+    text-align: center;
+    color: var(--color-error-main);
+}
