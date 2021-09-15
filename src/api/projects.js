@@ -1,14 +1,12 @@
 import {request} from "./request";
 
 const endpoints = {
-    getProjects: `/project`,
+    getProjects: `https://run.mocky.io/v3/a092c4a6-c24f-4c01-a1c3-e1cde88cbe93`,
 };
 export const projectsAPI = {
-    getProjects: credentials =>
+    getProjects: () =>
         request({
             method: 'get',
-            withCredentials: true,
             url: endpoints.getProjects,
-            data: credentials
         })
 }

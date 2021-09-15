@@ -32,9 +32,9 @@ export const Conversations = ({data, projects, companies, messages, onChange}) =
 
 Conversations.propTypes = {
     data: PropTypes.shape({
-        projectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-        companyId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
-    }).isRequired,
+        projectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        companyId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    }),
     projects: PropTypes.array.isRequired,
     companies: PropTypes.array.isRequired,
     messages: PropTypes.array.isRequired,

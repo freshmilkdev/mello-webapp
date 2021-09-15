@@ -17,7 +17,7 @@ export const Select = ({name, value, label, onChange, className = '', options}) 
 };
 Select.propTypes = {
     name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func.isRequired,
     options: PropTypes.array.isRequired,
     className: PropTypes.string,

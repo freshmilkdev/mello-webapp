@@ -9,7 +9,7 @@ export const useProtectedRoute = (token, path) => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        async function verifyToken(token) {
+        (async (token) => {
             if (token) {
                 try {
                     setLoading(true);
@@ -25,8 +25,7 @@ export const useProtectedRoute = (token, path) => {
                     console.log('tokenUpdated');
                 }
             }
-        }
-        verifyToken(token);
+        })();
     }, []);
 
     return {

@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Conversations} from "../components/Conversations/Conversations";
+import {useProjects} from "../hooks/projects/useProjects";
 
-const projects = [{id: 1, name: 'Project 1'}, {id: 2, name: 'Project 2'}];
+// const projects = [{id: 1, name: 'Project 1'}, {id: 2, name: 'Project 2'}];
 const companies = [{id: 1, name: 'Company 1'}, {id: 2, name: 'Company 2'}];
 const messages = [
     {
@@ -22,10 +23,21 @@ const messages = [
 ]
 export const ConversationsPage = () => {
     const [data, setData] = useState({
-        projectId: 1,
-        companyId: 1,
+        projectId: '',
+        companyId: '',
         chatInputMessage: ''
     });
+    const {projects} = useProjects();
+
+    useEffect(() => {
+        if (!data.projectId && projects.length > 0) {
+            setData({...data, projectId: projects[0].id});
+        }
+        if (!data.companyId && companies.length > 0) {
+            setData({...data, companyId: companies[0].id});
+        }
+    }, [projects, companies]);
+
     const handleChange = e => setData({...data, [e.target.name]: e.target.value});
     return (
         <Conversations
