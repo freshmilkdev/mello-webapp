@@ -18,7 +18,7 @@ export const useCompanies = projectId => {
             }
         })();
     }, [projectId]);
-    console.log(companies)
+
     return {
         companies
     }
