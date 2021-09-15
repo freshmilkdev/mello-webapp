@@ -5,7 +5,7 @@ import './App.css';
 import {HashRouter as Router, Switch} from "react-router-dom";
 import {routes} from "./routes";
 import {LoginPage} from "./pages/login";
-import {PublicRoute} from "./routes/PublicRoute";
+import {AppRoute} from "./routes/AppRoute";
 import {MenuPage} from "./pages/menu";
 import {MaintenanceRequestPage} from "./pages/maintenance-request";
 import {RequestPreviewPage} from "./pages/request-preview";
@@ -16,11 +16,11 @@ function App() {
         <div className="App">
             <Router>
                 <Switch>
-                    <PublicRoute path={routes.home} component={MenuPage} exact />
-                    <PublicRoute path={routes.login} component={LoginPage} />
-                    <PublicRoute path={routes.maintenanceRequest} component={MaintenanceRequestPage} />
-                    <PublicRoute path={routes.requestPreview} component={RequestPreviewPage} />
-                    <PublicRoute path={routes.conversations} component={ConversationsPage} />
+                    <AppRoute path={routes.home} component={MenuPage} exact />
+                    <AppRoute path={routes.login} component={LoginPage} />
+                    <AppRoute path={routes.maintenanceRequest} component={MaintenanceRequestPage} />
+                    <AppRoute path={routes.requestPreview} component={RequestPreviewPage} />
+                    <AppRoute path={routes.conversations} component={ConversationsPage} />
                 </Switch>
             </Router>
         </div>
