@@ -8,11 +8,13 @@ export const useAuth = () => {
     const history = useHistory();
     const [credentials, setCredentials] = useState({email: '', password: ''});
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
     const handleInputChange = e => setCredentials({...credentials, [e.target.name]: e.target.value});
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             if (error) setError(false);
+            setLoading(true);
             const result = await authService.login(credentials);
             if (result?.data?.token) {
                 saveState(tokenKey, result.data.token);
@@ -21,6 +23,8 @@ export const useAuth = () => {
         } catch (e) {
             console.log(e);
             setError(true);
+        } finally {
+            setLoading(false);
         }
     }
     const handleLogout = () => {
@@ -28,6 +32,7 @@ export const useAuth = () => {
         history.push(routes.login);
     }
     return {
+        loading,
         credentials,
         error,
         onCredentialsChange: handleInputChange,
