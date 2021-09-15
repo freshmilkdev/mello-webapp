@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
-import {loadState, removeState, saveState} from "../helpers/localStorage";
 import {routes} from "./index";
 import {authService} from "../services/auth.service";
 

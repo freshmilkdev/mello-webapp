@@ -1,8 +1,9 @@
 import React from 'react';
 import {Menu} from "../components/Menu/Menu";
+import {useAuth} from "../components/Login/useAuth";
 
 export const MenuPage = () => {
-    const handleLogOut = () => console.log('logout');
+    const {onLogout} = useAuth();
     const user = 'Lisa';
-    return <Menu onLogOut={handleLogOut} user={user}/>
+    return <Menu onLogout={onLogout} user={user}/>
 }

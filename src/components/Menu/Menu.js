@@ -6,7 +6,7 @@ import {Typography} from "../Shared/Typography/Typography";
 import {Button} from "../Shared/Button/Button";
 import {routes} from "../../routes";
 
-export const Menu = ({user, onLogOut}) => {
+export const Menu = ({user, onLogout}) => {
 
     return <div className={clsx(styles.menu, 'flexCenter')}>
         <div className={styles.loginInner}>
@@ -14,12 +14,12 @@ export const Menu = ({user, onLogOut}) => {
             <Typography className='mb-3'>Menu</Typography>
             <Button linkTo={routes.maintenanceRequest} label={'Submit A Request'} rounded className='mb-3'/>
             <Button linkTo={routes.conversations} label={'View Conversations'} rounded className='mb-3'/>
-            <Button label={'Log Out'} onClick={onLogOut} rounded outlined/>
+            <Button label={'Log Out'} onClick={onLogout} rounded outlined/>
         </div>
     </div>
 };
 
 Menu.propTypes = {
-    onLogOut: PropTypes.func.isRequired,
+    onLogout: PropTypes.func.isRequired,
     user: PropTypes.string.isRequired
 };
