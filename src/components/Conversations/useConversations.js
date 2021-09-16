@@ -42,6 +42,7 @@ export const useConversations = () => {
         onChange: handleChange,
         onMessageSend: handleMessageSend,
         projects,
-        companies
+        companies,
+        messages
     }
 }

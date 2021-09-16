@@ -13,20 +13,27 @@ request.interceptors.request.use((config) => {
     return config;
 });
 // Response interceptor for API calls
+let refreshTokenInProgress = null;// this holds any in-progress token refresh requests
 request.interceptors.response.use((response) => {
     return response
 }, async function (error) {
     const originalRequest = error.config;
     if ((error.response.status === 403 || error.response.status === 401) && !originalRequest._retry) {
         originalRequest._retry = true;
-        const refreshToken = loadState(localStorageKeys.refreshToken);
+        if (!refreshTokenInProgress) { // check for an existing in-progress request
+            const refreshToken = loadState(localStorageKeys.refreshToken);
+            try {
+                refreshTokenInProgress = true;
+                const result = await authAPI.refreshToken(refreshToken);
+                refreshTokenInProgress = null;
 
-        const result = await authAPI.refreshToken(refreshToken);
+                if (result?.data?.access) {
+                    saveState(localStorageKeys.accessToken, result.data.access);
+                    axios.defaults.headers.common['Authorization'] = 'Bearer ' + result.data.access;
+                }
+            } catch (e) {
 
-        if (result?.data?.access && result?.data?.refresh) {
-            saveState(localStorageKeys.accessToken, result.data.access);
-            saveState(localStorageKeys.refreshToken, result.data.refresh);
-            axios.defaults.headers.common['Authorization'] = 'Bearer ' + result.data.access;
+            }
         }
         return request(originalRequest);
     }

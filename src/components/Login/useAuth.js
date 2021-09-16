@@ -33,9 +33,11 @@ export const useAuth = () => {
             await authAPI.logout(refreshToken);
         } catch (e) {
 
+        } finally {
+            removeState(localStorageKeys.accessToken);
+            history.push(routes.login);
         }
-        removeState(localStorageKeys.accessToken);
-        history.push(routes.login);
+
     }
     return {
         loading,
