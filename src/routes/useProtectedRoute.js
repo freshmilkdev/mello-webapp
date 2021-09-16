@@ -8,26 +8,26 @@ export const useProtectedRoute = (accessToken) => {
     const history = useHistory();
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        (async (accessToken) => {
-            if (accessToken) {
-                try {
-                    setLoading(true);
-                    const refreshToken = loadState(localStorageKeys.refreshToken);
-                    const result = await authAPI.refreshToken(refreshToken);
-                    if (result?.data?.access && result?.data?.refresh) {
-                        saveState(localStorageKeys.accessToken, result.data.access);
-                        saveState(localStorageKeys.refreshToken, result.data.refresh);
+    /*    useEffect(() => {
+            (async (accessToken) => {
+                if (accessToken) {
+                    try {
+                        setLoading(true);
+                        const refreshToken = loadState(localStorageKeys.refreshToken);
+                        const result = await authAPI.refreshToken(refreshToken);
+                        if (result?.data?.access && result?.data?.refresh) {
+                            saveState(localStorageKeys.accessToken, result.data.access);
+                            saveState(localStorageKeys.refreshToken, result.data.refresh);
+                        }
+                    } catch (e) {
+                        setLoading(false);
+                        removeState(localStorageKeys.accessToken);
+                        history.push(routes.login);
                     }
-                } catch (e) {
-                    setLoading(false);
-                    removeState(localStorageKeys.accessToken);
-                    history.push(routes.login);
                 }
-            }
-        })(accessToken);
-    }, []);
-/*    useEffect(() => {
+            })(accessToken);
+        }, []);*/
+    useEffect(() => {
         (async (accessToken) => {
             if (accessToken) {
                 try {
@@ -41,7 +41,7 @@ export const useProtectedRoute = (accessToken) => {
                 }
             }
         })(accessToken);
-    }, []);*/
+    }, []);
 
     return {
         loading

@@ -10,7 +10,9 @@ export const Select = ({name, value, label, onChange, className = '', options}) 
             <select name={name} value={value} onChange={onChange}
                     className={clsx(styles.select)}>
                 {(options || []).map(({id, name}, ix) =>
-                    <option key={`${name}${ix}`} value={id}>{name}</option>)}
+                    <option key={`${name}${ix}`} value={id}>
+                        {name ? name : `Project ${ix + 1}`}
+                    </option>)}
             </select>
         </div>
     )

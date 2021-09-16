@@ -13,7 +13,7 @@ request.interceptors.request.use((config) => {
     return config;
 });
 // Response interceptor for API calls
-/*request.interceptors.response.use((response) => {
+request.interceptors.response.use((response) => {
     return response
 }, async function (error) {
     const originalRequest = error.config;
@@ -29,5 +29,5 @@ request.interceptors.request.use((config) => {
         return request(originalRequest);
     }
     return Promise.reject(error);
-});*/
+});
 export {request};

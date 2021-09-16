@@ -39,9 +39,6 @@ export const MaintenanceRequestPage = () => {
         } catch (e) {
             console.log(e)
         }
-        console.log(file);
-        console.log(requestData)
-        console.log('submit login form action');
     }
     return (
         <MaintenanceRequest

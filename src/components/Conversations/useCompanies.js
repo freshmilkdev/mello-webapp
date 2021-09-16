@@ -1,23 +1,16 @@
 import {useEffect, useState} from "react";
 
-import {companiesAPI} from "../../api/companies";
-
-export const useCompanies = projectId => {
+export const useCompanies = (projects, projectId) => {
     const [companies, setCompanies] = useState([]);
     useEffect(() => {
-        (async () => {
-            try {
-                if (projectId) {
-                    const result = await companiesAPI.getCompanies(projectId);
-                    if (result?.data?.companies) {
-                        setCompanies(result?.data?.companies);
-                    }
-                }
-            } catch (e) {
-                console.log(e);
+        if (projectId && projects.length > 0) {
+            const found = projects.filter(project => project.id === +projectId);
+            console.log(found)
+            if (found.length && found[0].companies.length > 0) {
+                setCompanies(found[0].companies);
             }
-        })();
-    }, [projectId]);
+        }
+    }, [projects, projectId]);
 
     return {
         companies
