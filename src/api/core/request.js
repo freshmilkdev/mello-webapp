@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {loadState} from "../helpers/localStorage";
+import {loadState} from "../../helpers/localStorage";
 
 const baseUrl = 'https://beta.mellobee.com/api';
 

@@ -1,4 +1,4 @@
-import {request} from "./request";
+import {request} from "./core/request";
 
 const endpoints = {
     getCompanies: `https://run.mocky.io/v3/f3142fa3-5f3b-401c-a020-6030a377b935?projectId=`,

@@ -1,7 +1,9 @@
-import {request} from "./request";
+import {request} from "./core/request";
 
-const endpoints = {
-    getProjects: `https://run.mocky.io/v3/a092c4a6-c24f-4c01-a1c3-e1cde88cbe93`,
+const endpoints = process.env.NODE_ENV === 'development' ?{
+    getProjects: `https://run.mocky.io/v3/19bedbf8-5d57-4d3f-8edd-e40971e83cc6`,
+}:{
+    getProjects: '/project/',
 };
 export const projectsAPI = {
     getProjects: () =>
