@@ -20,7 +20,9 @@ request.interceptors.response.use((response) => {
     if ((error.response.status === 403 || error.response.status === 401) && !originalRequest._retry) {
         originalRequest._retry = true;
         const refreshToken = loadState(localStorageKeys.refreshToken);
+
         const result = await authAPI.refreshToken(refreshToken);
+
         if (result?.data?.access && result?.data?.refresh) {
             saveState(localStorageKeys.accessToken, result.data.access);
             saveState(localStorageKeys.refreshToken, result.data.refresh);

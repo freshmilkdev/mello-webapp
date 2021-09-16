@@ -1,11 +1,11 @@
 import {request} from "./core/request";
 
-const endpoints = process.env.NODE_ENV === 'development' ?{
+const endpoints = {
     getProjects: `/project/`,
-    createProject: `/project/`
-}:{
-    getProjects: '/project/',
-};
+    createProject: `/project/`,
+    createConversation: projectId => `/project/${projectId}/`,
+    sendMessage: (projectId, companyId) => `/api/project/${projectId}/company/${companyId}/`
+}
 export const projectsAPI = {
     getProjects: () =>
         request({
@@ -16,11 +16,38 @@ export const projectsAPI = {
         request({
             method: 'post',
             headers: {
-                // 'Content-Type': 'application/json',
                 'Content-Type': 'multipart/form-data'
             },
             withCredentials: true,
             url: endpoints.createProject,
             data: formData
+        }),
+    createConversation: (projectId) => {
+        request({
+            method: 'patch',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            withCredentials: true,
+            url: endpoints.createConversation(projectId),
+            data: {
+                project_id: projectId
+            }
         })
+    },
+    sendMessage: (projectId, companyId, message) => {
+        request({
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            withCredentials: true,
+            url: endpoints.sendMessage(projectId, companyId),
+            data: {
+                message,
+                project_id: projectId,
+                company_id: companyId
+            }
+        })
+    }
 }

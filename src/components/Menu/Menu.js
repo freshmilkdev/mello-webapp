@@ -1,13 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Menu.module.css';
 import clsx from "clsx";
 import {Typography} from "../Shared/Typography/Typography";
 import {Button} from "../Shared/Button/Button";
 import {routes} from "../../routes";
+import {useAuth} from "../Login/useAuth";
 
-export const Menu = ({user, onLogout}) => {
-
+export const Menu = () => {
+    const user = 'Lisa';
+    const {onLogout} = useAuth();
     return <div className={clsx(styles.menu, 'flexCenter')}>
         <div className={styles.loginInner}>
             <Typography variant={'h3'}>Welcome {user}!</Typography>
@@ -17,9 +18,4 @@ export const Menu = ({user, onLogout}) => {
             <Button label={'Log Out'} onClick={onLogout} rounded outlined/>
         </div>
     </div>
-};
-
-Menu.propTypes = {
-    onLogout: PropTypes.func.isRequired,
-    user: PropTypes.string.isRequired
 };

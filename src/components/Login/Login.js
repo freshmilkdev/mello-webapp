@@ -2,20 +2,22 @@ import React from 'react';
 import {Input} from "../Shared/Input/Input";
 import styles from './Login.module.css';
 import clsx from "clsx";
-import PropTypes from 'prop-types';
+
 import {Typography} from "../Shared/Typography/Typography";
 import {Button} from "../Shared/Button/Button";
+import {useAuth} from "./useAuth";
 
-export const Login = ({credentials, loading, error, onLogIn, onInputChange}) => {
+export const Login = () => {
+    const {credentials, loading, error, onCredentialsChange, onLogin} = useAuth();
     const {email, password} = credentials;
     return (
         <div className={clsx(styles.login, 'flexCenter')}>
-            <form className={styles.loginInner} onSubmit={onLogIn}>
+            <form className={styles.loginInner} onSubmit={onLogin}>
                 <Typography variant={'h3'}>Welcome!</Typography>
                 <Typography className='mb-3'>Sign In</Typography>
                 <Input
                     rounded
-                    onChange={onInputChange}
+                    onChange={onCredentialsChange}
                     value={email}
                     name='email'
                     type={`email`}
@@ -23,7 +25,7 @@ export const Login = ({credentials, loading, error, onLogIn, onInputChange}) => 
                     className='mb-3'/>
                 <Input
                     rounded
-                    onChange={onInputChange}
+                    onChange={onCredentialsChange}
                     value={password}
                     name='password'
                     label='Password'
@@ -36,12 +38,3 @@ export const Login = ({credentials, loading, error, onLogIn, onInputChange}) => 
     )
 };
 
-Login.propTypes = {
-    loading: PropTypes.bool,
-    credentials: PropTypes.shape({
-        email: PropTypes.string.isRequired,
-        password: PropTypes.string.isRequired
-    }).isRequired,
-    onLogIn: PropTypes.func.isRequired,
-    onInputChange: PropTypes.func.isRequired,
-};

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import {routes} from "./index";
 import {authAPI} from "../api/auth";
-import {saveState, removeState, loadState, localStorageKeys} from "../helpers/localStorage";
+import {removeState, localStorageKeys} from "../helpers/localStorage";
 
 export const useProtectedRoute = (accessToken) => {
     const history = useHistory();

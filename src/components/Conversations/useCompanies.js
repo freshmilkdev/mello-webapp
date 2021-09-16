@@ -5,7 +5,6 @@ export const useCompanies = (projects, projectId) => {
     useEffect(() => {
         if (projectId && projects.length > 0) {
             const found = projects.filter(project => project.id === +projectId);
-            console.log(found)
             if (found.length && found[0].companies.length > 0) {
                 setCompanies(found[0].companies);
             }

@@ -22,7 +22,7 @@ export const Input = ({name, value, label, onChange, rounded = false, type = 'te
 Input.propTypes = {
     required: PropTypes.bool,
     name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func.isRequired,
     rounded: PropTypes.bool,
     type: PropTypes.string,

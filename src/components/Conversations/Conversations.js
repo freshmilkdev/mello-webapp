@@ -1,11 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import {Header} from "../Shared/Header/Header";
 import {Select} from "../Shared/Select/Select"
 import {Chat} from "./Chat/Chat";
 import styles from './Conversations.module.css';
-export const Conversations = ({data, projects, companies, messages, onChange}) => {
-    const {projectId, companyId, chatInputMessage} = data
+import {useConversations} from "./useConversations";
+const messages = [
+    {
+        id: 1,
+        datetime: '9/3/21, 8:22 am',
+        text: `Hello, thank you for reaching out to us. Our rates are $175/hr with a minimum of 30 minutes. Based on your job description and pictures we estimate that it’ll take less than 2 hours to completely fix your issue, but it will depend on the specifics of the situation once when get there. Our next availability is Friday.`
+    },
+    {
+        id: 2,
+        datetime: '9/3/21, 8:22 am',
+        text: `Hello, thank you for reaching out to us. Our rates are $175/hr with a minimum of 30 minutes. Based on your job description and pictures we estimate that it’ll take less than 2 hours to completely fix your issue, but it will depend on the specifics of the situation once when get there. Our next availability is Friday.`
+    },
+    {
+        id: 3,
+        datetime: '9/3/21, 8:22 am',
+        text: `Hello, thank you for reaching out to us. Our rates are $175/hr with a minimum of 30 minutes. Based on your job description and pictures we estimate that it’ll take less than 2 hours to completely fix your issue, but it will depend on the specifics of the situation once when get there. Our next availability is Friday.`
+    }
+]
+export const Conversations = () => {
+    const {data, companies, projects, onChange, onMessageSend} = useConversations();
+    const {projectId, companyId, chatInputMessage} = data;
     return (
         <div>
             <Header/>
@@ -25,18 +44,7 @@ export const Conversations = ({data, projects, companies, messages, onChange}) =
                     name='companyId'
                     value={companyId}/>
             </div>
-            <Chat messages={messages} inputMessage={chatInputMessage}  onChange={onChange}/>
+            <Chat messages={messages} inputMessage={chatInputMessage} onChange={onChange} onMessageSend={onMessageSend}/>
         </div>
     );
 }
-
-Conversations.propTypes = {
-    data: PropTypes.shape({
-        projectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-        companyId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    }),
-    projects: PropTypes.array.isRequired,
-    companies: PropTypes.array.isRequired,
-    messages: PropTypes.array.isRequired,
-    onChange: PropTypes.func.isRequired
-};
