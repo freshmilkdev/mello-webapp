@@ -29,7 +29,11 @@ export const useAuth = () => {
     }
     const handleLogout = async () => {
         const refreshToken = loadState(localStorageKeys.refreshToken);
-        await authAPI.logout(refreshToken);
+        try {
+            await authAPI.logout(refreshToken);
+        } catch (e) {
+
+        }
         removeState(localStorageKeys.accessToken);
         history.push(routes.login);
     }

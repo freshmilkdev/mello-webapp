@@ -31,7 +31,11 @@ export const useConversations = () => {
     const handleChange = e => setData({...data, [e.target.name]: e.target.value});
     const handleMessageSend = async e => {
         e.preventDefault();
-        await projectsAPI.sendMessage(projectId, companyId, message);
+        try {
+            await projectsAPI.sendMessage(projectId, companyId, message);
+        } catch (e) {
+
+        }
     }
     return {
         data,
