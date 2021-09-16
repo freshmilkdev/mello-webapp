@@ -2,30 +2,30 @@ import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import {routes} from "./index";
 import {authAPI} from "../api/auth";
-import {saveState, removeState} from "../helpers/localStorage";
+import {saveState, removeState, loadState, localStorageKeys} from "../helpers/localStorage";
 
-export const useProtectedRoute = (token, path) => {
+export const useProtectedRoute = (accessToken) => {
     const history = useHistory();
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        (async (token) => {
-            if (token) {
+        (async (accessToken) => {
+            if (accessToken) {
                 try {
                     setLoading(true);
-                    const result = await authAPI.verifyToken(token);
-                    if (result?.data?.token) {
-                        saveState('accessToken', result.data.token);
+                    const refreshToken = loadState(localStorageKeys.refreshToken);
+                    const result = await authAPI.refreshToken(accessToken, refreshToken);
+                    if (result?.data?.access && result?.data?.refresh) {
+                        saveState(localStorageKeys.accessToken, result.data.access);
+                        saveState(localStorageKeys.refreshToken, result.data.refresh);
                     }
                 } catch (e) {
-                    removeState(`accessToken`);
-                    history.push(routes.login);
-                } finally {
                     setLoading(false);
-                    console.log('tokenUpdated');
+                    removeState(localStorageKeys.accessToken);
+                    history.push(routes.login);
                 }
             }
-        })();
+        })(accessToken);
     }, []);
 
     return {

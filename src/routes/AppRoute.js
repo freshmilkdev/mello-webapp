@@ -4,25 +4,25 @@ import {Redirect, Route} from 'react-router-dom';
 import { Layout } from '../components/Layout/Layout';
 import {useProtectedRoute} from "./useProtectedRoute";
 import {routes} from "./index";
-import {loadState, tokenKey} from "../helpers/localStorage";
+import {loadState, localStorageKeys} from "../helpers/localStorage";
 
 export const AppRoute = ({ component: Component, isAuthProtected = true, ...rest }) => {
     const {path} = rest;
-    const token = loadState(tokenKey);
-    const {loading} = useProtectedRoute(token, path);
+    const accessToken = loadState(localStorageKeys.accessToken);
+    const {loading} = useProtectedRoute(accessToken, path);
     const isLogin = path === routes.login;
     return (
         <Route
             {...rest}
             render={(props) => {
-                if (!token && !isLogin) {
+                if (!accessToken && !isLogin) {
                     return (
                         <Redirect
                             to={{pathname: routes.login, state: {from: props.location}}}
                         />
                     )
                 }
-                if (token && isLogin) {
+                if (accessToken && isLogin) {
                     return (
                         <Redirect
                             to={{pathname: routes.home, state: {from: props.location}}}

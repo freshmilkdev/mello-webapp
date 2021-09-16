@@ -1,7 +1,7 @@
 import {request} from "./request";
 
 const endpoints = {
-    login: `/login`,
+    login: `/token`,
     getToken: /*`/token`*/ `https://run.mocky.io/v3/6512c41a-c0ae-4773-b127-977045c457ad`,
     //test for error
     //https://run.mocky.io/v3/bed572cc-40e7-4a66-a0a9-6ee991c191cb
@@ -16,7 +16,7 @@ export const authAPI = {
                 'Content-Type': 'application/json'
             },
             withCredentials: true,
-            url: endpoints.getToken,
+            url: endpoints.login,
             data: credentials
         }),
     verifyToken: token =>
@@ -31,7 +31,7 @@ export const authAPI = {
                 token
             }
         }),
-    refreshToken: token =>
+    refreshToken: (accessToken, refreshToken) =>
         request({
             method: 'post',
             headers: {
@@ -39,5 +39,9 @@ export const authAPI = {
             },
             withCredentials: true,
             url: endpoints.refreshToken,
+            data: {
+                access: accessToken,
+                refresh: refreshToken
+            }
         }),
 }

@@ -1,4 +1,7 @@
-const tokenKey = 'accessToken';
+const localStorageKeys = {
+    accessToken: 'accessToken',
+    refreshToken: 'refreshToken'
+}
 const loadState = (key) => {
     try {
         const serializedState = localStorage.getItem(key);
@@ -24,7 +27,7 @@ const removeState = (key) => {
     localStorage.removeItem(key);
 };
 export {
-    tokenKey,
+    localStorageKeys,
     loadState,
     saveState,
     removeState

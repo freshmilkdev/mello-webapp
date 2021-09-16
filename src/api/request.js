@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {loadState} from "../helpers/localStorage";
 
-const baseUrl = 'localhost:3000/api';
+const baseUrl = 'https://beta.mellobee.com/api';
 
 const request = axios.create({
     baseURL: baseUrl

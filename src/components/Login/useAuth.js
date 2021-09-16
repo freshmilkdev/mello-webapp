@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {authAPI} from "../../api/auth";
-import {removeState, saveState, tokenKey} from "../../helpers/localStorage";
+import {removeState, saveState, localStorageKeys} from "../../helpers/localStorage";
 import {useHistory} from "react-router-dom";
 import {routes} from "../../routes";
 
@@ -16,8 +16,9 @@ export const useAuth = () => {
             if (error) setError(false);
             setLoading(true);
             const result = await authAPI.login(credentials);
-            if (result?.data?.token) {
-                saveState(tokenKey, result.data.token);
+            if (result?.data?.access && result?.data?.refresh) {
+                saveState(localStorageKeys.accessToken, result.data.access);
+                saveState(localStorageKeys.refreshToken, result.data.refresh);
                 history.push(routes.home);
             }
         } catch (e) {
@@ -27,7 +28,7 @@ export const useAuth = () => {
         }
     }
     const handleLogout = () => {
-        removeState(tokenKey);
+        removeState(localStorageKeys.accessToken);
         history.push(routes.login);
     }
     return {
