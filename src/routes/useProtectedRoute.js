@@ -14,7 +14,7 @@ export const useProtectedRoute = (accessToken) => {
                 try {
                     setLoading(true);
                     const refreshToken = loadState(localStorageKeys.refreshToken);
-                    const result = await authAPI.refreshToken(accessToken, refreshToken);
+                    const result = await authAPI.refreshToken(refreshToken);
                     if (result?.data?.access && result?.data?.refresh) {
                         saveState(localStorageKeys.accessToken, result.data.access);
                         saveState(localStorageKeys.refreshToken, result.data.refresh);
@@ -27,6 +27,21 @@ export const useProtectedRoute = (accessToken) => {
             }
         })(accessToken);
     }, []);
+/*    useEffect(() => {
+        (async (accessToken) => {
+            if (accessToken) {
+                try {
+                    setLoading(true);
+                    await authAPI.verifyToken(accessToken);
+                } catch (e) {
+                    setLoading(false);
+                    removeState(localStorageKeys.accessToken);
+                    removeState(localStorageKeys.refreshToken);
+                    history.push(routes.login);
+                }
+            }
+        })(accessToken);
+    }, []);*/
 
     return {
         loading
