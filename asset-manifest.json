@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/mello-webapp/static/css/main.c893c086.chunk.css",
-    "main.js": "/mello-webapp/static/js/main.f8dea905.chunk.js",
-    "main.js.map": "/mello-webapp/static/js/main.f8dea905.chunk.js.map",
-    "runtime-main.js": "/mello-webapp/static/js/runtime-main.d1a8715c.js",
-    "runtime-main.js.map": "/mello-webapp/static/js/runtime-main.d1a8715c.js.map",
-    "static/js/2.f8385ff8.chunk.js": "/mello-webapp/static/js/2.f8385ff8.chunk.js",
-    "static/js/2.f8385ff8.chunk.js.map": "/mello-webapp/static/js/2.f8385ff8.chunk.js.map",
-    "static/js/3.8a7141f4.chunk.js": "/mello-webapp/static/js/3.8a7141f4.chunk.js",
-    "static/js/3.8a7141f4.chunk.js.map": "/mello-webapp/static/js/3.8a7141f4.chunk.js.map",
+    "main.css": "/mello-webapp/static/css/main.81a90b52.chunk.css",
+    "main.js": "/mello-webapp/static/js/main.127d6192.chunk.js",
+    "main.js.map": "/mello-webapp/static/js/main.127d6192.chunk.js.map",
+    "runtime-main.js": "/mello-webapp/static/js/runtime-main.00b3697a.js",
+    "runtime-main.js.map": "/mello-webapp/static/js/runtime-main.00b3697a.js.map",
+    "static/js/2.39b38f84.chunk.js": "/mello-webapp/static/js/2.39b38f84.chunk.js",
+    "static/js/2.39b38f84.chunk.js.map": "/mello-webapp/static/js/2.39b38f84.chunk.js.map",
+    "static/js/3.85d3296c.chunk.js": "/mello-webapp/static/js/3.85d3296c.chunk.js",
+    "static/js/3.85d3296c.chunk.js.map": "/mello-webapp/static/js/3.85d3296c.chunk.js.map",
     "index.html": "/mello-webapp/index.html",
-    "static/css/main.c893c086.chunk.css.map": "/mello-webapp/static/css/main.c893c086.chunk.css.map",
-    "static/js/2.f8385ff8.chunk.js.LICENSE.txt": "/mello-webapp/static/js/2.f8385ff8.chunk.js.LICENSE.txt"
+    "static/css/main.81a90b52.chunk.css.map": "/mello-webapp/static/css/main.81a90b52.chunk.css.map",
+    "static/js/2.39b38f84.chunk.js.LICENSE.txt": "/mello-webapp/static/js/2.39b38f84.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d1a8715c.js",
-    "static/js/2.f8385ff8.chunk.js",
-    "static/css/main.c893c086.chunk.css",
-    "static/js/main.f8dea905.chunk.js"
+    "static/js/runtime-main.00b3697a.js",
+    "static/js/2.39b38f84.chunk.js",
+    "static/css/main.81a90b52.chunk.css",
+    "static/js/main.127d6192.chunk.js"
   ]
 }
