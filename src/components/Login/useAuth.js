@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {authAPI} from "../../api/auth";
-import {removeState, saveState, localStorageKeys} from "../../helpers/localStorage";
+import {removeState, saveState, localStorageKeys, loadState} from "../../helpers/localStorage";
 import {useHistory} from "react-router-dom";
 import {routes} from "../../routes";
 
@@ -27,7 +27,9 @@ export const useAuth = () => {
             setLoading(false);
         }
     }
-    const handleLogout = () => {
+    const handleLogout = async () => {
+        const refreshToken = loadState(localStorageKeys.refreshToken);
+        await authAPI.logout(refreshToken);
         removeState(localStorageKeys.accessToken);
         history.push(routes.login);
     }
