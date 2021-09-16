@@ -60,6 +60,7 @@
     width: 75%;
     font-size: 14px;
 }
+
 .chatInputBtn {
     width: 25%;
     outline: none;
@@ -68,23 +69,33 @@
     border-bottom-right-radius: 5px;
     cursor: pointer;
 }
-.chatInputBtn svg{
+
+.chatInputBtn svg {
     width: 40px;
 }
-.chatInputBtn:hover{
+
+.disabled {
+    cursor: initial;
+}
+
+.chatInputBtn:not(.disabled):hover {
     background: #c4e9ef;
 }
-.chatInputBtn span{
+
+.chatInputBtn span {
     display: none;
 }
+
 @media screen and (min-width: 767px) {
     .chatInputBtn, .chatInput {
         font-size: 18px;
     }
-    .chatInputBtn svg{
+
+    .chatInputBtn svg {
         display: none;
     }
-    .chatInputBtn span{
+
+    .chatInputBtn span {
         display: initial;
     }
 }

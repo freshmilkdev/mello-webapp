@@ -24,7 +24,7 @@ const messages = [
 ]
 export const Conversations = () => {
     const {data, companies, projects, onChange, onMessageSend} = useConversations();
-    const {projectId, companyId, chatInputMessage} = data;
+    const {projectId, companyId, message} = data;
     return (
         <div>
             <Header/>
@@ -44,7 +44,7 @@ export const Conversations = () => {
                     name='companyId'
                     value={companyId}/>
             </div>
-            <Chat messages={messages} inputMessage={chatInputMessage} onChange={onChange} onMessageSend={onMessageSend}/>
+            <Chat messages={messages} inputMessage={message} onChange={onChange} onMessageSend={onMessageSend}/>
         </div>
     );
 }

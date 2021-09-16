@@ -4,7 +4,8 @@ const endpoints = {
     getProjects: `/project/`,
     createProject: `/project/`,
     createConversation: projectId => `/project/${projectId}/`,
-    sendMessage: (projectId, companyId) => `/api/project/${projectId}/company/${companyId}/`
+    getMessages: (projectId, companyId) => `/project/${projectId}/company/${companyId}/`,
+    sendMessage: (projectId, companyId) => `/project/${projectId}/company/${companyId}/`
 }
 export const projectsAPI = {
     getProjects: () =>
@@ -22,7 +23,7 @@ export const projectsAPI = {
             url: endpoints.createProject,
             data: formData
         }),
-    createConversation: (projectId) => {
+    createConversation: (projectId) =>
         request({
             method: 'patch',
             headers: {
@@ -33,9 +34,14 @@ export const projectsAPI = {
             data: {
                 project_id: projectId
             }
-        })
-    },
-    sendMessage: (projectId, companyId, message) => {
+        }),
+
+    getMessages: (projectId, companyId) =>
+        request({
+            method: 'get',
+            url: endpoints.getMessages(projectId, companyId),
+        }),
+    sendMessage: (projectId, companyId, message) =>
         request({
             method: 'post',
             headers: {
@@ -49,5 +55,4 @@ export const projectsAPI = {
                 company_id: companyId
             }
         })
-    }
 }

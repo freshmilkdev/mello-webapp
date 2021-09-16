@@ -2,19 +2,21 @@ import {useEffect, useState} from "react";
 import {useProjects} from "./useProjects";
 import {useCompanies} from "./useCompanies";
 import {useCreateConversation} from "./useCreateConversation";
+import {projectsAPI} from "../../api/projects";
+import {useMessages} from "./useMessages";
 
 export const useConversations = () => {
     const [data, setData] = useState({
         projectId: '',
         companyId: '',
-        chatInputMessage: ''
+        message: ''
     });
+    const {projectId, companyId, message} = data;
     const {projects} = useProjects();
-    const {companies} = useCompanies(projects, data.projectId);
-
-
+    const {companies} = useCompanies(projects, projectId);
+    const {messages} = useMessages(projectId, companyId);
     useEffect(() => {
-        if (!data.projectId && projects.length > 0) {
+        if (!projectId && projects.length > 0) {
             if (projects[0].companies.length > 0) {
                 setData({
                     ...data,
@@ -25,10 +27,11 @@ export const useConversations = () => {
         }
     }, [projects, companies]);
 
-    useCreateConversation(data.projectId);
+    useCreateConversation(projectId);
     const handleChange = e => setData({...data, [e.target.name]: e.target.value});
-    const handleMessageSend = e => {
+    const handleMessageSend = async e => {
         e.preventDefault();
+        await projectsAPI.sendMessage(projectId, companyId, message);
     }
     return {
         data,

@@ -3,17 +3,20 @@ import PropTypes from 'prop-types';
 import styles from './Chat.module.css';
 
 import {ArrowTopIcon} from "../../Shared/Icons/ArrowTopIcon";
+import clsx from "clsx";
 
 export const ChatInput = memo(({inputMessage, onChange, onMessageSend}) =>
     (<form className={styles.chatInputWrapper} onSubmit={onMessageSend}>
         <textarea
             required
             placeholder={'Type your message here...'}
-            rows={2} name='chatInputMessage'
+            rows={2} name='message'
             value={inputMessage}
             onChange={onChange}
             className={styles.chatInput}/>
-        <button className={styles.chatInputBtn} disabled={!inputMessage}>
+        <button className={clsx(styles.chatInputBtn,{
+            [styles.disabled]: !inputMessage
+        })} disabled={!inputMessage}>
             <ArrowTopIcon/>
             <span>Send</span>
         </button>

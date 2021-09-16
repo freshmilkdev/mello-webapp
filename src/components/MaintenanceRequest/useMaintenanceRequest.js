@@ -11,7 +11,7 @@ export const useMaintenanceRequest = () => {
         num_requests: '',
         address: '',
         city: '',
-        zipCode: '',
+        zip_code: '',
         message: ''
     });
     const [file, setFile] = useState(null);

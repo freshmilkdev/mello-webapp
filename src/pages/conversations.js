@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Conversations} from "../components/Conversations/Conversations";
 
 export const ConversationsPage = () => {
