@@ -29,7 +29,8 @@ request.interceptors.response.use((response) => {
 
                 if (result?.data?.access) {
                     saveState(localStorageKeys.accessToken, result.data.access);
-                    axios.defaults.headers.common['Authorization'] = 'Bearer ' + result.data.access;
+                    request.defaults.headers.common['Authorization'] = 'Bearer ' + result.data.access;
+
                     if (originalRequest.url === '/token/verify/') {
                         originalRequest.data = JSON.stringify({token: result.data.access});
                     }

@@ -35,9 +35,9 @@ export const useProtectedRoute = (accessToken) => {
                     await authAPI.verifyToken(accessToken);
                 } catch (e) {
                     setLoading(false);
-                    removeState(localStorageKeys.accessToken);
+                    /*removeState(localStorageKeys.accessToken);
                     removeState(localStorageKeys.refreshToken);
-                    history.push(routes.login);
+                    history.push(routes.login);*/
                 }
             }
         })(accessToken);
