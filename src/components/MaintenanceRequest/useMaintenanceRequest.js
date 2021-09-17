@@ -20,7 +20,7 @@ export const useMaintenanceRequest = () => {
 
     const [requestData, setRequestData] = useState({
         jobType: '',
-        numRequests: '',
+        numRequests: '1',
         address: '',
         city: '',
         zipCode: '',

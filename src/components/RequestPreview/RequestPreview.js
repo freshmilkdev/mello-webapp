@@ -9,7 +9,7 @@ import {useHistory} from "react-router-dom";
 import {routes} from "../../routes";
 
 export const RequestPreview = () => {
-    const {requestData, onSubmit, onCancel} = usePreviewRequest();
+    const {requestData, conversationCreated, onSubmit, onCancel} = usePreviewRequest();
     let history = useHistory();
     useEffect(() => {
         if (!requestData) {
@@ -27,7 +27,7 @@ export const RequestPreview = () => {
                 <RequestPreviewContent vendorName={vendorName} address={address} city={city} description={message}/>
                 <RequestPreviewCompanies companies={companies}/>
             </div>
-            <RequestPreviewButtons onSubmit={onSubmit} onCancel={onCancel} disabled={!companies.length}/>
+            <RequestPreviewButtons onSubmit={onSubmit} onCancel={onCancel} disabled={!companies.length} conversationCreated={conversationCreated}/>
         </div>
     )
 }

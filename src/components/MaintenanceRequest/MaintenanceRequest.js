@@ -13,7 +13,7 @@ export const MaintenanceRequest = () => {
             <form onSubmit={onSubmit}>
                 <Input required onChange={onInputChange} value={jobType} name='jobType'
                        label='Job Type (ex: handyman, plumber, electrician, AC repair, etc...)' className='mb-1'/>
-                <Input max='50' min='0' type='number' onChange={onInputChange} value={numRequests}
+                <Input max='50' min='1' type='number' onChange={onInputChange} value={numRequests}
                        name='numRequests'
                        label='# of Requests (suggested 20, max 50)'
                        className='mb-1'/>
