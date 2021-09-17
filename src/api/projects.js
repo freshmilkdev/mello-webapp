@@ -31,9 +31,7 @@ export const projectsAPI = {
             },
             withCredentials: true,
             url: endpoints.createConversation(projectId),
-            data: {
-                project_id: projectId
-            }
+            data: {send_confirmed: true}
         }),
 
     getMessages: (projectId, companyId) =>

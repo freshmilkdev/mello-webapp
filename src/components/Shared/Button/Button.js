@@ -6,21 +6,22 @@ import styles from './Button.module.css';
 import {Loader} from "../Loader/Loader";
 
 export const Button = (
-    {label, linkTo = '', color = 'primary', rounded = false, outlined = false, onClick, className = '', small = false, fullWidth = true, loading}) => {
+    {label, linkTo = '', color = 'primary', rounded = false, outlined = false, onClick, className = '', small = false, fullWidth = true, loading, disabled = false}) => {
     let props = {};
     if (onClick) props.onClick = onClick;
     if (linkTo) props.to = linkTo;
 
     const TagComponent = linkTo ? Link : 'button';
 
-    return <TagComponent {...props} className={clsx(styles.button, className, {
+    return <TagComponent disabled={disabled} {...props} className={clsx(styles.button, className, {
         [styles.rounded]: rounded,
         [styles.outlined]: outlined,
         [styles.small]: small,
         [styles.fullWidth]: fullWidth,
-        [styles.secondary]: color === 'secondary'
+        [styles.secondary]: color === 'secondary',
+        [styles.disabled]: disabled
     })}>
-        <span className={'flexCenter'}>{loading && <Loader />}{label}</span>
+        <span className={'flexCenter'}>{loading && <Loader/>}{label}</span>
     </TagComponent>
 }
 

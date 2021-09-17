@@ -6,21 +6,21 @@ import {useMaintenanceRequest} from "./useMaintenanceRequest";
 
 export const MaintenanceRequest = () => {
     const {requestData, onSubmit, onInputChange} = useMaintenanceRequest();
-    const {job_type, num_requests, address, city, zip_code, message, photo} = requestData;
+    const {jobType, numRequests, address, city, zipCode, message, photo} = requestData;
     return (
         <div>
             <Header title={'Maintenance Request'}/>
             <form onSubmit={onSubmit}>
-                <Input required onChange={onInputChange} value={job_type} name='job_type'
+                <Input required onChange={onInputChange} value={jobType} name='jobType'
                        label='Job Type (ex: handyman, plumber, electrician, AC repair, etc...)' className='mb-1'/>
-                <Input max='50' min='0' type='number' onChange={onInputChange} value={num_requests}
-                       name='num_requests'
+                <Input max='50' min='0' type='number' onChange={onInputChange} value={numRequests}
+                       name='numRequests'
                        label='# of Requests (suggested 20, max 50)'
                        className='mb-1'/>
                 <Input required onChange={onInputChange} value={address} name='address' label='Address'
                        className='mb-1'/>
                 <Input required onChange={onInputChange} value={city} name='city' label='City' className='mb-1'/>
-                <Input required onChange={onInputChange} value={zip_code} name='zip_code' label='Zip Code'
+                <Input required onChange={onInputChange} value={zipCode} name='zipCode' label='Zip Code'
                        className='mb-1'/>
                 <Input required multiline onChange={onInputChange} value={message} name='message'
                        label='Describe your issue in as much detail as possible:' className='mb-1'/>

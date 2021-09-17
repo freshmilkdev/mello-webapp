@@ -27,14 +27,14 @@ export const useConversations = () => {
         }
     }, [projects, companies]);
 
-    useCreateConversation(projectId);
+    // useCreateConversation(projectId);
     const handleChange = e => setData({...data, [e.target.name]: e.target.value});
     const handleMessageSend = async e => {
         e.preventDefault();
         try {
             await projectsAPI.sendMessage(projectId, companyId, message);
         } catch (e) {
-
+            console.log(e);
         }
     }
     return {

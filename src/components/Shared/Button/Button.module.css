@@ -29,9 +29,15 @@
     }
 }
 
-.button:hover, .button:active {
+.button:not(.disabled):hover, .button:not(.disabled):active {
     background: var(--color-primary-dark);
     color: #fff;
+}
+
+.disabled {
+    background: var(--color-grey-light);
+    border: 1px solid var(--color-grey-light);
+    cursor: initial;
 }
 
 .outlined {
