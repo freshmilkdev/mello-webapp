@@ -6,7 +6,9 @@ import {Button} from "../Shared/Button/Button";
 
 export const RequestPreviewButtons = ({disabled, conversationCreated, onSubmit, onCancel}) => (
     <div>
-        <h4 className={'mb-3 textCenter'}>Are you ready to send your request?</h4>
+        {conversationCreated ?
+            <h4 className={clsx('mb-3 textCenter', styles.success)}>Your message has been sent successfully.</h4> :
+            <h4 className={'mb-3 textCenter'}>Are you ready to send your request?</h4>}
         <div className={clsx('flexCenter', styles.buttons)}>
             <Button onClick={onCancel} label={conversationCreated ? 'Home' : 'Cancel'} color={"secondary"}
                     fullWidth={false} small/>

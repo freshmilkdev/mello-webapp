@@ -13,7 +13,9 @@
     font-weight: 500;
     letter-spacing: 1px;
 }
-
+.success {
+    color: var(--color-sucess-main);
+}
 .buttons {
     justify-content: space-between;
 }

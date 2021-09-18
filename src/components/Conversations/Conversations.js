@@ -5,7 +5,7 @@ import {Select} from "../Shared/Select/Select"
 import {Chat} from "./Chat/Chat";
 import styles from './Conversations.module.css';
 import {useConversations} from "./useConversations";
-
+const formatProjectsOptions = (projects) => projects.map(p=>({name: `${p.job_type}${p.date? p.date : ''}`, id: p.id}))
 export const Conversations = () => {
     const {data, companies, projects, onChange, onMessageSend, messages} = useConversations();
     const {projectId, companyId, message} = data;
@@ -16,7 +16,7 @@ export const Conversations = () => {
                 <Select
                     className={'mb-1'}
                     label={'Project'}
-                    options={projects}
+                    options={formatProjectsOptions(projects)}
                     onChange={onChange}
                     name='projectId'
                     value={projectId}/>

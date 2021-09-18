@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import {useProjects} from "./useProjects";
 import {useCompanies} from "./useCompanies";
-import {useCreateConversation} from "./useCreateConversation";
 import {projectsAPI} from "../../api/projects";
 import {useMessages} from "./useMessages";
 
@@ -14,7 +13,7 @@ export const useConversations = () => {
     const {projectId, companyId, message} = data;
     const {projects} = useProjects();
     const {companies} = useCompanies(projects, projectId);
-    const {messages} = useMessages(projectId, companyId);
+    const {messages, fetchMessages} = useMessages(projectId, companyId);
     useEffect(() => {
         if (!projectId && projects.length > 0) {
             if (projects[0].companies.length > 0) {
@@ -33,6 +32,7 @@ export const useConversations = () => {
         e.preventDefault();
         try {
             await projectsAPI.sendMessage(projectId, companyId, message);
+            await fetchMessages();
         } catch (e) {
             console.log(e);
         }
