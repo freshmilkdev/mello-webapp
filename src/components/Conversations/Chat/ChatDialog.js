@@ -6,7 +6,7 @@ import styles from './Chat.module.css';
 export const ChatDialog = memo(({messages}) =>
     <div className={styles.chatDialog}>
         {(messages || []).map(({body, index, created, author}) =>
-            <Message key={`message${index}`} text={body} datetime={created}/>)}
+            <Message key={`message${index}`} text={body} created={created} author={author}/>)}
     </div>)
 
 ChatDialog.propTypes = {
