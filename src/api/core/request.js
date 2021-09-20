@@ -40,7 +40,7 @@ request.interceptors.response.use((response) => {
                 console.log(e);
                 removeState(localStorageKeys.accessToken);
                 removeState(localStorageKeys.refreshToken);
-                return window.location.href = routes.login;
+                return window.location.href = process.env.NODE_ENV === 'development' ? routes.login : '/mello-webapp';
             }
         }
         return request(originalRequest);
