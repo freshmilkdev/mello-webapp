@@ -6,8 +6,10 @@ import {Chat} from "./Chat/Chat";
 import styles from './Conversations.module.css';
 import {useConversations} from "./useConversations";
 
+const formatDate = date => date? date.split('T')[0].split('-').reverse().join('/') : '';
+
 const formatProjectsOptions = (projects) => projects.map(p => ({
-    name: `${p.job_type}${p.date ? p.date : ''}`,
+    name: `${p.job_type} ${p.created ? formatDate(p.created) : ''}`,
     id: p.id
 }))
 export const Conversations = () => {
