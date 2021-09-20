@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Redirect, Route} from 'react-router-dom';
 import { Layout } from '../components/Layout/Layout';
-import {useProtectedRoute} from "./useProtectedRoute";
+// import {useProtectedRoute} from "./useProtectedRoute";
 import {routes} from "./index";
 import {loadState, localStorageKeys} from "../helpers/localStorage";
 
 export const AppRoute = ({ component: Component, isAuthProtected = true, ...rest }) => {
     const {path} = rest;
     const accessToken = loadState(localStorageKeys.accessToken);
-    const {loading} = useProtectedRoute(accessToken, path);
+    // const {loading} = useProtectedRoute(accessToken, path);
     const isLogin = path === routes.login;
     return (
         <Route

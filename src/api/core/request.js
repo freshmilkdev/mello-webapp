@@ -1,6 +1,7 @@
 import axios from 'axios';
-import {loadState, localStorageKeys, saveState} from "../../helpers/localStorage";
+import {loadState, localStorageKeys, removeState, saveState} from "../../helpers/localStorage";
 import {authAPI} from "../auth";
+import {routes} from "../../routes";
 
 const baseUrl = 'https://beta.mellobee.com/api';
 
@@ -37,6 +38,9 @@ request.interceptors.response.use((response) => {
                 }
             } catch (e) {
                 console.log(e);
+                removeState(localStorageKeys.accessToken);
+                removeState(localStorageKeys.refreshToken);
+                return window.location.href = routes.login;
             }
         }
         return request(originalRequest);
