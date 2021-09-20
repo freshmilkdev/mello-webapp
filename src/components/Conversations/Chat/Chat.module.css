@@ -21,7 +21,6 @@
 
 .messageWrapper {
     display: flex;
-
 }
 
 .messageWrapper:nth-child(even) {
@@ -41,7 +40,10 @@
     color: #000000;
     line-height: 18px;
 }
-
+.messageWrapper:nth-child(even) .messageInner{
+    background: #c3eaf0;
+    border: 1px solid #c3eaf0;
+}
 .chatInputWrapper {
     display: flex;
     border-top: 1px solid var(--color-grey-dark);
