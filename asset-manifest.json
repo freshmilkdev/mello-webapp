@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/mello-webapp/static/css/main.0a7005e6.chunk.css",
-    "main.js": "/mello-webapp/static/js/main.6cc81726.chunk.js",
-    "main.js.map": "/mello-webapp/static/js/main.6cc81726.chunk.js.map",
+    "main.css": "/mello-webapp/static/css/main.5f28bcb7.chunk.css",
+    "main.js": "/mello-webapp/static/js/main.6ee4465a.chunk.js",
+    "main.js.map": "/mello-webapp/static/js/main.6ee4465a.chunk.js.map",
     "runtime-main.js": "/mello-webapp/static/js/runtime-main.00b3697a.js",
     "runtime-main.js.map": "/mello-webapp/static/js/runtime-main.00b3697a.js.map",
-    "static/js/2.987ae69e.chunk.js": "/mello-webapp/static/js/2.987ae69e.chunk.js",
-    "static/js/2.987ae69e.chunk.js.map": "/mello-webapp/static/js/2.987ae69e.chunk.js.map",
+    "static/js/2.44ec7a2a.chunk.js": "/mello-webapp/static/js/2.44ec7a2a.chunk.js",
+    "static/js/2.44ec7a2a.chunk.js.map": "/mello-webapp/static/js/2.44ec7a2a.chunk.js.map",
     "static/js/3.85d3296c.chunk.js": "/mello-webapp/static/js/3.85d3296c.chunk.js",
     "static/js/3.85d3296c.chunk.js.map": "/mello-webapp/static/js/3.85d3296c.chunk.js.map",
     "index.html": "/mello-webapp/index.html",
-    "static/css/main.0a7005e6.chunk.css.map": "/mello-webapp/static/css/main.0a7005e6.chunk.css.map",
-    "static/js/2.987ae69e.chunk.js.LICENSE.txt": "/mello-webapp/static/js/2.987ae69e.chunk.js.LICENSE.txt"
+    "static/css/main.5f28bcb7.chunk.css.map": "/mello-webapp/static/css/main.5f28bcb7.chunk.css.map",
+    "static/js/2.44ec7a2a.chunk.js.LICENSE.txt": "/mello-webapp/static/js/2.44ec7a2a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.00b3697a.js",
-    "static/js/2.987ae69e.chunk.js",
-    "static/css/main.0a7005e6.chunk.css",
-    "static/js/main.6cc81726.chunk.js"
+    "static/js/2.44ec7a2a.chunk.js",
+    "static/css/main.5f28bcb7.chunk.css",
+    "static/js/main.6ee4465a.chunk.js"
   ]
 }
