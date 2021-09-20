@@ -7,7 +7,7 @@ export const RequestPreviewContent = ({vendorName, description, address, city}) 
 
     return (
         <div className={clsx(styles.content, 'mb-3')}>
-            <p>Hello, is this {vendorName}? I got your info off Yelp. {description}. I am located at {address} in {city}.</p>
+            <p>Hello, is this {vendorName}? I got your info off Yelp. {description} I am located at {address} in {city}.</p>
             <p>How much will this job cost, or if an in-person estimate is needed, how much is the estimate visit? When is your next availability?</p>
         </div>
     );
