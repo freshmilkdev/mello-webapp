@@ -23,15 +23,13 @@
     display: flex;
 }
 
-.messageWrapper:not(.system) {
+.messageWrapper.system {
     justify-content: flex-end;
 }
-.messageWrapper:not(.system) .messageInner{
+
+.system .messageInner{
     background: #E5EFF1;
     border: 1px solid #E5EFF1;
-}
-.system{
-
 }
 .message {
     width: 86%;
